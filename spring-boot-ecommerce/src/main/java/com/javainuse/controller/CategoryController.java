@@ -17,22 +17,22 @@ public class CategoryController {@Autowired
 private CategoryRepository categoryRepository;
 
     @GetMapping("/get")
-    public List<Category> getUsers() {
+    public List<Category> getCategories() {
         return categoryRepository.findAll();
     }
 
     @PostMapping("/add")
-    public void createUser(@RequestBody Category cate) {
+    public void createCategory(@RequestBody Category cate) {
         categoryRepository.save(cate);
     }
 
     @PutMapping("/update")
-    public void updateBook(@RequestBody Category cate) {
+    public void updateCategory(@RequestBody Category cate) {
         categoryRepository.save(cate);
     }
 
     @DeleteMapping(path = { "/{id}" })
-    public Category deleteUser(@PathVariable("id") long id) {
+    public Category deleteCategory(@PathVariable("id") long id) {
         Category cate = categoryRepository.getOne(id);
         categoryRepository.deleteById(id);
         return cate;

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from 'src/app/model/Category';
 import { Book } from '../../../model/Book';
 import { HttpClientService } from '../../../service/http-client.service';
 
@@ -18,7 +19,7 @@ export class AddbookComponent implements OnInit {
 
   public selectedFile;
   imgURL: any;
-
+  categories: Array<Category>;
   constructor(
     private httpClientService: HttpClientService,
     private activedRoute: ActivatedRoute,

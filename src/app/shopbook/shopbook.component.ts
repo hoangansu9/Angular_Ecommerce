@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Book } from '../model/Book';
 import { HttpClientService } from '../service/http-client.service';
 
@@ -14,6 +15,7 @@ export class ShopbookComponent implements OnInit {
 
   cartBooks: any;
 
+  faShoppingCart = faShoppingCart;
   constructor(
     private router: Router,
     private httpClientService: HttpClientService

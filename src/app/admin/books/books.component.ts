@@ -61,7 +61,7 @@ export class BooksComponent implements OnInit {
         'data:image/jpeg;base64,' + book.picByte;
       bookwithRetrievedImageField.author = book.author;
       bookwithRetrievedImageField.price = book.price;
-      bookwithRetrievedImageField.category = book.category;
+      bookwithRetrievedImageField.category_id = book.category_id;
       bookwithRetrievedImageField.picByte = book.picByte;
       this.books.push(bookwithRetrievedImageField);
     }

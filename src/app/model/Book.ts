@@ -1,5 +1,3 @@
-import { Category } from './Category';
-
 export class Book {
   id: number;
   name: string;
@@ -7,6 +5,6 @@ export class Book {
   price: number;
   picByte: string;
   retrievedImage: string;
-  category: Category;
+  category_id: number;
   isAdded: boolean;
 }

@@ -16,6 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderMainComponent } from './header/header-main/header-main.component';
+import { HeaderComponent } from './header/header.component';
+import { MainNavComponent } from './header/main-nav/main-nav.component';
+import { PageMenuComponent } from './header/page-menu/page-menu.component';
+import { TopBarComponent } from './header/top-bar/top-bar.component';
 import { MenuComponent } from './menu/menu.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
@@ -39,7 +44,11 @@ import { ViewedComponent } from './viewed/viewed.component';
     CopyrightComponent,
     NewsletterComponent,
     ViewedComponent,
-    NewsletterComponent,
+    HeaderComponent,
+    PageMenuComponent,
+    TopBarComponent,
+    MainNavComponent,
+    HeaderMainComponent,
   ],
   imports: [
     BrowserModule,

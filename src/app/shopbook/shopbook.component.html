@@ -1,45 +1,4 @@
-<ul class="cart_shopping">
-  <li class="dropdown">
-    <br />
-    <a
-      href="#"
-      class="btn btn_badge btn-lg"
-      data-toggle="dropdown"
-      role="button"
-      aria-expanded="false"
-    >
-      <fa-icon [icon]="faShoppingCart"></fa-icon>
-      <span class="badge badge-pill badge-warning badge_cart">{{
-        cartBooks.length
-      }}</span>
-    </a>
-    <ul class="dropdown-menu dropdown-cart" role="menu">
-      <li *ngFor="let item of cartBooks">
-        <div class="item product-cart-item row">
-          <div class="col-md-8" *ngIf="item">{{ item.name }}</div>
-          <div class="col-md-4" *ngIf="item">
-            <strong>${{ item.price }}</strong>
-          </div>
-        </div>
-      </li>
-      <hr />
-      <li>
-        <a class="btn btn-small btn-success" role="button" (click)="goToCart()"
-          >View Cart</a
-        >
-      </li>
-      <br />
-      <li *ngIf="cartBooks.length > 0">
-        <a class="btn btn-small btn-warning" role="button" (click)="emptyCart()"
-          >Empty Cart</a
-        >
-      </li>
-    </ul>
-  </li>
-</ul>
 
-<hr />
-<hr />
 
 <div class="container row">
   <!-- Product Item -->

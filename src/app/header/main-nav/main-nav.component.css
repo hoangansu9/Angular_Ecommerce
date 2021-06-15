@@ -7,7 +7,7 @@
 .header.scrolled .main_nav {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0px;
   -webkit-transition: all 200ms ease;
   -moz-transition: all 200ms ease;
   -ms-transition: all 200ms ease;

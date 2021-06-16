@@ -215,7 +215,7 @@ select option {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.wishlist_cart {
+/* .wishlist_cart {
   height: 175px;
 }
 .wishlist {
@@ -244,8 +244,8 @@ select option {
   margin-top: -2px;
   color: #a3a3a3;
   font-size: 14px;
-}
-.cart_count {
+} */
+/* .cart_count {
   position: absolute;
   bottom: -1px;
   right: -14px;
@@ -289,4 +289,4 @@ select option {
   font-size: 14px;
   color: #a3a3a3;
   margin-top: -2px;
-}
+} */

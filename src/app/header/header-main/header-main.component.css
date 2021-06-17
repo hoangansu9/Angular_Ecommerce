@@ -15,14 +15,7 @@
 .logo_container {
   height: 175px;
 }
-.logo {
-  /* top: 50%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%); */
-}
+
 .logo a {
   font-size: 36px;
   font-weight: 500;
@@ -131,8 +124,7 @@
   line-height: 48px;
   cursor: pointer;
 }
-.custom_dropdown_placeholder i {
-}
+
 .custom_list {
   text-align: left;
   position: absolute;
@@ -215,4 +207,10 @@ select option {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
+.cart_shopping {
+  list-style: none;
+}
+.dropdown-cart {
+  padding: 20px;
+  width: 300px;
+}

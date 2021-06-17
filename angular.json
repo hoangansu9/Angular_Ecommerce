@@ -25,6 +25,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/styles/shop_styles.css",
+              "src/assets/styles/shop_responsive.css",
               "src/styles.css"
             ],
             "scripts": []

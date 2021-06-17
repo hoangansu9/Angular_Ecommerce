@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Book } from '../model/Book';
 import { HttpClientService } from '../service/http-client.service';
-
 @Component({
   selector: 'app-shopbook',
   templateUrl: './shopbook.component.html',
@@ -17,6 +17,7 @@ export class ShopbookComponent implements OnInit {
 
   faShoppingCart = faShoppingCart;
   constructor(
+    @Inject(DOCUMENT) private _document: Document,
     private router: Router,
     private httpClientService: HttpClientService
   ) {}
@@ -77,7 +78,9 @@ export class ShopbookComponent implements OnInit {
   goToCart() {
     this.router.navigate(['/cart']);
   }
-
+  refreshPage() {
+    this._document.defaultView.location.reload();
+  }
   emptyCart() {
     this.cartBooks = [];
     localStorage.clear();

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DropdownDirective } from 'src/shared/dropdown.directive';
 import { AddbookComponent } from './admin/books/addbook/addbook.component';
 import { BooksComponent } from './admin/books/books.component';
 import { ViewbookComponent } from './admin/books/viewbook/viewbook.component';
@@ -14,6 +16,7 @@ import { UsersComponent } from './admin/users/users.component';
 import { ViewuserComponent } from './admin/users/viewuser/viewuser.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderMainComponent } from './header/header-main/header-main.component';
@@ -23,11 +26,10 @@ import { PageMenuComponent } from './header/page-menu/page-menu.component';
 import { TopBarComponent } from './header/top-bar/top-bar.component';
 import { MenuComponent } from './menu/menu.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { ShopContentComponent } from './shopbook/shop-content/shop-content.component';
+import { ShopSidebarComponent } from './shopbook/shop-sidebar/shop-sidebar.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
 import { ViewedComponent } from './viewed/viewed.component';
-import { DropdownDirective } from 'src/shared/dropdown.directive';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BookDetailComponent } from './book-detail/book-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,9 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     MainNavComponent,
     HeaderMainComponent,
     DropdownDirective,
-    BookDetailComponent
+    BookDetailComponent,
+    ShopContentComponent,
+    ShopSidebarComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,9 +29,9 @@
   cursor: pointer;
   z-index: 1;
 }
-.cat_menu {
+/* .cat_menu {
   display: none !important;
-}
+} */
 
 .cat_menu_title {
   height: 100%;
@@ -63,10 +63,10 @@
   margin-left: 20px;
 }
 .cat_menu_container ul {
-  display: block;
+  display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 15px;
   /*visibility: hidden;
 	opacity: 0;*/
   min-width: 100%;
@@ -127,7 +127,7 @@
   font-size: 12px;
 }
 .cat_menu li ul {
-  display: block;
+  display: none;
   position: absolute;
   top: 35px;
   left: 100%;
@@ -184,4 +184,7 @@
   color: #ffffff;
   text-transform: uppercase;
   margin-right: 16px;
+}
+.cat_menu_container:hover ul {
+  display: block;
 }

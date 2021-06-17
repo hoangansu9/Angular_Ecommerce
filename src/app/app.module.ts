@@ -26,6 +26,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
 import { ViewedComponent } from './viewed/viewed.component';
 import { DropdownDirective } from 'src/shared/dropdown.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

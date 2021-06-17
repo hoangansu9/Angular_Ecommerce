@@ -52,104 +52,63 @@
       </div>
 
       <!-- Wishlist -->
-      <!-- <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-        <div
-          class="
-            wishlist_cart
-            d-flex
-            flex-row
-            align-items-center
-            justify-content-end
-          "
-        > -->
-      <!-- <div
-            class="
-              wishlist
-              d-flex
-              flex-row
-              align-items-center
-              justify-content-end
-            "
-          >
-            <div class="wishlist_icon">
-              <img src="../assets/images/heart.png" alt="" />
-            </div>
-            <div class="wishlist_content">
-              <div class="wishlist_text"><a href="#">Wishlist</a></div>
-              <div class="wishlist_count">115</div>
-            </div>
-          </div> -->
-
-      <!-- Cart -->
-      <!-- <div class="cart">
-            <div
-              class="
-                cart_container
-                d-flex
-                flex-row
-                align-items-center
-                justify-content-end
-              "
-            >
-              <div class="cart_content">
-                <ul class="cart_shopping">
-                  <li class="dropdown">
-                    <br />
-                    <a
-                      href="#"
-                      class="btn btn_badge btn-lg"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-expanded="false"
-                    >
-                      <span class="badge badge-pill badge-warning badge_cart">{{
-                        cartBooks.length
-                      }}</span>
-                    </a>
-                    <div class="cart_icon">
-                      <img src="images/cart.png" alt="" />
-                      <div class="cart_count"><span>10</span></div>
+      <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+        <!-- Cart -->
+        <div class="cart">
+          <div class="cart_content">
+            <ul class="cart_shopping">
+              <li class="dropdown">
+                <br />
+                <a
+                  href="#"
+                  class="btn btn_badge btn-lg"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-expanded="false"
+                >
+                  <span class="badge badge-pill badge-warning badge_cart">{{
+                    cartBooks.length
+                  }}</span>
+                </a>
+                <div class="cart_icon">
+                  <img src="images/cart.png" alt="" />
+                  <div class="cart_count"><span>10</span></div>
+                </div>
+                <ul class="dropdown-menu dropdown-cart" role="menu">
+                  <li *ngFor="let item of cartBooks">
+                    <div class="item product-cart-item row">
+                      <div class="col-md-8" *ngIf="item">
+                        {{ item.name }}
+                      </div>
+                      <div class="col-md-4" *ngIf="item">
+                        <strong>${{ item.price }}</strong>
+                      </div>
                     </div>
-                    <ul class="dropdown-menu dropdown-cart" role="menu">
-                      <li *ngFor="let item of cartBooks">
-                        <div class="item product-cart-item row">
-                          <div class="col-md-8" *ngIf="item">
-                            {{ item.name }}
-                          </div>
-                          <div class="col-md-4" *ngIf="item">
-                            <strong>${{ item.price }}</strong>
-                          </div>
-                        </div>
-                      </li>
-                      <hr />
-                      <li>
-                        <a
-                          class="btn btn-small btn-success"
-                          role="button"
-                          (click)="goToCart()"
-                          >View Cart</a
-                        >
-                      </li>
-                      <br />
-                      <li *ngIf="cartBooks.length > 0">
-                        <a
-                          class="btn btn-small btn-warning"
-                          role="button"
-                          (click)="emptyCart()"
-                          >Empty Cart</a
-                        >
-                      </li>
-                    </ul>
+                  </li>
+                  <hr />
+                  <li>
+                    <a
+                      class="btn btn-small btn-success"
+                      role="button"
+                      (click)="goToCart()"
+                      >View Cart</a
+                    >
+                  </li>
+                  <br />
+                  <li *ngIf="cartBooks.length > 0">
+                    <a
+                      class="btn btn-small btn-warning"
+                      role="button"
+                      (click)="emptyCart()"
+                      >Empty Cart</a
+                    >
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div> -->
-      <!-- dsas -->
-
-      <!-- asdsa -->
-      <!-- </div>
-      </div> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

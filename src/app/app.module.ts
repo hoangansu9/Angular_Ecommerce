@@ -25,6 +25,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
 import { ViewedComponent } from './viewed/viewed.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ViewedComponent } from './viewed/viewed.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

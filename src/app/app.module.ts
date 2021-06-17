@@ -25,7 +25,8 @@ import { MenuComponent } from './menu/menu.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
 import { ViewedComponent } from './viewed/viewed.component';
-
+import { DropdownDirective } from 'src/shared/dropdown.directive';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,8 @@ import { ViewedComponent } from './viewed/viewed.component';
     TopBarComponent,
     MainNavComponent,
     HeaderMainComponent,
+    DropdownDirective,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

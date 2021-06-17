@@ -16,7 +16,7 @@ import { UsersComponent } from './admin/users/users.component';
 import { ViewuserComponent } from './admin/users/viewuser/viewuser.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BrandsComponent } from './brands/brands.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderMainComponent } from './header/header-main/header-main.component';
@@ -24,16 +24,16 @@ import { HeaderComponent } from './header/header.component';
 import { MainNavComponent } from './header/main-nav/main-nav.component';
 import { PageMenuComponent } from './header/page-menu/page-menu.component';
 import { TopBarComponent } from './header/top-bar/top-bar.component';
-import { MenuComponent } from './menu/menu.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
-import { ShopContentComponent } from './shopbook/shop-content/shop-content.component';
-import { ShopSidebarComponent } from './shopbook/shop-sidebar/shop-sidebar.component';
+import { ShopContentComponent } from './shop/shop-content/shop-content.component';
+import { ShopSidebarComponent } from './shop/shop-sidebar/shop-sidebar.component';
+import { ShopComponent } from './shop/shop.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
 import { ViewedComponent } from './viewed/viewed.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    BrandsComponent,
     UsersComponent,
     FooterComponent,
     AdduserComponent,
@@ -54,9 +54,9 @@ import { ViewedComponent } from './viewed/viewed.component';
     MainNavComponent,
     HeaderMainComponent,
     DropdownDirective,
-    BookDetailComponent,
-    ShopContentComponent,
+    ShopComponent,
     ShopSidebarComponent,
+    ShopContentComponent,
   ],
   imports: [
     BrowserModule,

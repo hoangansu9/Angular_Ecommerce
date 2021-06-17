@@ -1,9 +1,27 @@
-<app-header></app-header>
-<!-- <app-menu></app-menu> -->
-<router-outlet></router-outlet>
-<!-- <app-book-detail></app-book-detail> -->
+<div class="super_container">
+  <!-- Header -->
 
-<app-viewed></app-viewed>
+  <app-header></app-header>
 
-<app-footer></app-footer>
-<app-copyright></app-copyright>
+  <!-- Home -->
+
+  <!-- <div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+		<div class="home_overlay"></div>
+		<div class="home_content d-flex flex-column align-items-center justify-content-center">
+			<h2 class="home_title">Smartphones & Tablets</h2>
+		</div>
+  </div> -->
+  <router-outlet></router-outlet>
+  <app-shop></app-shop>
+
+  <app-viewed></app-viewed>
+
+  <app-brands></app-brands>
+
+  <app-newsletter></app-newsletter>
+
+  <app-footer></app-footer>
+
+  <app-copyright></app-copyright>
+</div>

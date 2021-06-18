@@ -39,12 +39,13 @@
     name="category"
     [(ngModel)]="book.category_id"
   />
-  <!-- <select class="custom-select" formControlName="cityName">
-    <option value="" disabled>Choose your Cate</option>
-    <option *ngFor="let category of categories" [ngValue]="category.id">
-      {{ category.name }}
+  <!-- <label for="categories">Category</label> -->
+  <!-- <select formControlName="categories" id="categories">
+    <option id="cate.id" *ngFor="let cate of categories" [value]="cate.id">
+      {{ cate.name }}
     </option>
   </select> -->
+
   <div class="form-group" *ngIf="book.id == null">
     <!-- only show this field on adding a book -->
     <br />
@@ -62,7 +63,7 @@
     <img src="{{ book.retrievedImage }}" alt="" style="max-height: 300px" />
   </div>
 </div>
-<!-- 
+
 <div class="row">
   <div class="col-sm-12">
     <h1>{{ book.name }}</h1>
@@ -71,9 +72,22 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <div class="btn-group show" role="group" aria- label="Button group with nested dropdown">
+    <div
+      class="btn-group show"
+      role="group"
+      aria-
+      label="Button group with nested dropdown"
+    >
       <div class="btn-group" role="group" appDropdown>
-        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria- haspopup="true" aria-expanded="false">
+        <button
+          id="btnGroupDrop1"
+          type="button"
+          class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown"
+          aria-
+          haspopup="true"
+          aria-expanded="false"
+        >
           Manage
         </button>
         <div class="dropdown-menu show" aria- labelledby="btnGroupDrop1">
@@ -84,4 +98,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>

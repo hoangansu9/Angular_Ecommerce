@@ -13,6 +13,7 @@ import { HttpClientService } from '../../../service/http-client.service';
 export class AddbookComponent implements OnInit {
   @Input()
   book: Book;
+  
 
   @Output()
   bookAddedEvent = new EventEmitter();
@@ -27,10 +28,13 @@ export class AddbookComponent implements OnInit {
     private httpClient: HttpClient
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.httpClientService
+      .getCategory()
+      .subscribe((response) => this.handleSuccessfulResponse(response));
+  }
 
   public onFileChanged(event) {
-    console.log(event);
     this.selectedFile = event.target.files[0];
 
     // Below part is used to display the selected image
@@ -69,5 +73,9 @@ export class AddbookComponent implements OnInit {
         this.router.navigate(['admin', 'books']);
       });
     }
+  }
+  handleSuccessfulResponse(response) {
+    this.categories = response;
+  
   }
 }

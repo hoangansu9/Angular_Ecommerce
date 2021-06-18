@@ -28,7 +28,6 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { ShopContentComponent } from './shop/shop-content/shop-content.component';
 import { ShopSidebarComponent } from './shop/shop-sidebar/shop-sidebar.component';
 import { ShopComponent } from './shop/shop.component';
-import { ShopbookComponent } from './shopbook/shopbook.component';
 import { ViewedComponent } from './viewed/viewed.component';
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import { ViewedComponent } from './viewed/viewed.component';
     BooksComponent,
     AddbookComponent,
     ViewbookComponent,
-    ShopbookComponent,
     CategoriesComponent,
     AddcategoryComponent,
     ViewcategoryComponent,

@@ -1,6 +1,6 @@
 <h1>{{ book.id == null ? "Add" : "Edit" }} Book - {{ book.id }}</h1>
 
-<form>
+<form enctype="multipart/form-data">
   <label for="name">Name</label>
   <input
     type="text"
@@ -32,7 +32,7 @@
   />
   <label for="category">Category</label>
   <input
-    type="text"
+    type="number"
     class="form-control"
     id="category"
     placeholder="Category"
@@ -59,12 +59,10 @@
 </form>
 <div class="row">
   <div class="col-sm-12">
-
-    <img src="{{ book.retrievedImage }}" alt="" style="max-height: 300px;">
-
+    <img src="{{ book.retrievedImage }}" alt="" style="max-height: 300px" />
   </div>
 </div>
-
+<!-- 
 <div class="row">
   <div class="col-sm-12">
     <h1>{{ book.name }}</h1>
@@ -86,5 +84,4 @@
       </div>
     </div>
   </div>
-</div>
-
+</div> -->

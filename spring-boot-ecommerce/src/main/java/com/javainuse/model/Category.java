@@ -1,6 +1,7 @@
 package com.javainuse.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,16 +19,15 @@ import java.util.Collection;
 @Table(name = "category")
 public class Category {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(name = "name")
-    private String name;
+  @Column(name = "name")
+  private String name;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-
-    @EqualsAndHashCode.Exclude
-    private Collection<Book> book;
+//  @JsonManagedReference
+//  @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+//  private Set<Book> book;
 }

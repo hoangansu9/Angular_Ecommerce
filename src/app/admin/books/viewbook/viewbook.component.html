@@ -23,6 +23,22 @@
   <img src="{{ book.retrievedImage }}" height="200" width="200" />
   <br /><br />
 
-  <a class="btn btn-small btn-warning" (click)="editBook()">edit</a>
-  <a class="btn btn-small btn-danger" (click)="deleteBook()">delete</a>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="btn-group show" role="group" aria- label="Button group with nested dropdown">
+        <div class="btn-group" role="group" appDropdown>
+          <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Manage
+          </button>
+          <div class="dropdown-menu show" aria- labelledby="btnGroupDrop1">
+            <a class="btn btn-small " (click)="editBook()">Edit Book</a>
+            <a class="btn btn-small " (click)="deleteBook()">Delete Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<br /><br />
+<br /><br />
+<br /><br />

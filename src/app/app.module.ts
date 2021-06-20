@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { DropdownDirective } from 'src/shared/dropdown.directive';
 import { AddbookComponent } from './admin/books/addbook/addbook.component';
 import { BooksComponent } from './admin/books/books.component';
@@ -63,6 +64,7 @@ import { ViewedComponent } from './viewed/viewed.component';
     FormsModule,
     FontAwesomeModule,
     NgbModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

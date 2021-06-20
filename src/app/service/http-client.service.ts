@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Book } from '../model/Book';
 import { Category } from '../model/Category';
 import { User } from '../model/User';
@@ -28,7 +29,11 @@ export class HttpClientService {
   getBooks() {
     return this.httpClient.get<Book[]>('http://localhost:8080/books/get');
   }
-
+  getPagging(page,size): Observable<any> {
+    return this.httpClient.get<any>(
+      `http://localhost:8080/books/paging?page=${page}&size=${size}`
+    );
+  }
   addBook(newBook: Book) {
     return this.httpClient.post<Book>(
       'http://localhost:8080/books/add',

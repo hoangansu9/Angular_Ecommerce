@@ -16,6 +16,16 @@ export class ShopContentComponent implements OnInit {
 
   cartBooks: any;
 
+  tutorials: Book[] = [];
+  currentTutorial?: Book;
+  currentIndex = -1;
+  title = '';
+
+  page = 1;
+  count = 0;
+  size = 10;
+  pageSizes = [10, 15, 20];
+  countBooks = 0;
   faShoppingCart = faShoppingCart;
   constructor(
     @Inject(DOCUMENT) private _document: Document,
@@ -35,6 +45,46 @@ export class ShopContentComponent implements OnInit {
     } else {
       this.cartBooks = [];
     }
+
+    this.retrieveTutorials();
+  }
+
+  getRequestParams(page: number, size: number): any {
+    // tslint:disable-next-line:prefer-const
+    let params: any = {};
+
+    if (page) {
+      params[`page`] = page - 1;
+    }
+
+    if (size) {
+      params[`size`] = size;
+    }
+
+    return params;
+  }
+  retrieveTutorials(): void {
+    this.httpClientService.getPagging(this.page, this.size).subscribe(
+      (response) => {
+        const { tutorials, totalItems } = response;
+        this.tutorials = tutorials;
+        this.count = totalItems;
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+  handlePageChange(event: number): void {
+    this.page = event;
+    this.retrieveTutorials();
+  }
+
+  handlePageSizeChange(event: any): void {
+    this.size = event.target.value;
+    this.page = 1;
+    this.retrieveTutorials();
   }
 
   handleSuccessfulResponse(response) {
@@ -53,6 +103,8 @@ export class ShopContentComponent implements OnInit {
       bookwithRetrievedImageField.picByte = book.picByte;
       this.books.push(bookwithRetrievedImageField);
     }
+    this.countBooks = this.booksRecieved.length;
+    console.log('this.countBooks :>> ', this.countBooks);
   }
 
   addToCart(bookId) {

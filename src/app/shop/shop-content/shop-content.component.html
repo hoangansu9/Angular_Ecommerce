@@ -2,26 +2,28 @@
 
 <div class="shop_content">
   <div class="shop_bar clearfix">
-    <div class="shop_product_count"><span>18</span> Sản phẩm được tìm thấy</div>
+    <div class="shop_product_count">
+      <span>{{ countBooks }}</span> Sản phẩm được tìm thấy
+    </div>
     <div class="shop_sorting">
       <span>Lọc theo:</span>
       <ul>
         <li>
           <span class="sorting_text"
-            >Được bình chọn cao nhất<i class="fas fa-chevron-down"></i
+            >Yêu thích<i class="fas fa-chevron-down"></i
           ></span>
           <ul>
             <li
               class="shop_sorting_button"
               data-isotope-option='{ "sortBy": "original-order" }'
             >
-              Được bình chọn cao nhất
+              Yêu thích
             </li>
             <li
               class="shop_sorting_button"
               data-isotope-option='{ "sortBy": "name" }'
             >
-              Tên sản phẩm
+              Tên
             </li>
             <li
               class="shop_sorting_button"
@@ -39,7 +41,10 @@
     <div class="product_grid_border"></div>
 
     <!-- Product Item -->
-    <div class="product_item is_new" *ngFor="let book of books; let i = index">
+    <div
+      class="product_item is_new"
+      *ngFor="let book of tutorials; let i = index"
+    >
       <div class="product_border"></div>
       <div
         class="
@@ -74,7 +79,7 @@
     </div>
 
     <!-- Product Item discount -->
-    <div class="product_item discount">
+    <!-- <div class="product_item discount">
       <div class="product_border"></div>
       <div
         class="
@@ -100,11 +105,9 @@
         <li class="product_mark product_discount">-25%</li>
         <li class="product_mark product_new">new</li>
       </ul>
-    </div>
+    </div> -->
 
-    <!-- Shop Page Navigation -->
-
-    <div class="shop_page_nav d-flex flex-row">
+    <!-- <div class="shop_page_nav d-flex flex-row">
       <div
         class="
           page_prev
@@ -134,6 +137,23 @@
       >
         <i class="fas fa-chevron-right"></i>
       </div>
+    </div> -->
+
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      [responsive]="true"
+      (pageChange)="handlePageChange($event)"
+    >
+    </pagination-controls>
+
+    <div class="mt-3">
+      ... Items per Page:
+      <select (change)="handlePageSizeChange($event)">
+        <option *ngFor="let size of pageSizes" [ngValue]="size">
+          {{ size }}
+        </option>
+      </select>
     </div>
   </div>
 </div>

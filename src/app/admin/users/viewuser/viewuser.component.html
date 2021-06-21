@@ -17,5 +17,21 @@
   
     </table>
     <br>
-    <a class="btn btn-small btn-danger" (click)="deleteUser()"> delete</a>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="btn-group show" role="group" aria- label="Button group with nested dropdown">
+          <div class="btn-group" role="group" appDropdown>
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Manage
+            </button>
+            <div class="dropdown-menu show" aria- labelledby="btnGroupDrop1">
+              <a class="btn btn-small btn-danger" (click)="deleteUser()">Delete User </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <br /><br />
+<br /><br />
+<br /><br />

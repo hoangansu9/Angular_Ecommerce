@@ -18,6 +18,7 @@ import { ViewuserComponent } from './admin/users/viewuser/viewuser.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrandsComponent } from './brands/brands.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderMainComponent } from './header/header-main/header-main.component';
@@ -26,12 +27,11 @@ import { MainNavComponent } from './header/main-nav/main-nav.component';
 import { PageMenuComponent } from './header/page-menu/page-menu.component';
 import { TopBarComponent } from './header/top-bar/top-bar.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 import { ShopContentComponent } from './shop/shop-content/shop-content.component';
 import { ShopSidebarComponent } from './shop/shop-sidebar/shop-sidebar.component';
 import { ShopComponent } from './shop/shop.component';
 import { ViewedComponent } from './viewed/viewed.component';
-import { ShopDetailComponent } from './shop-detail/shop-detail.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
 @NgModule({
   declarations: [
     AppComponent,

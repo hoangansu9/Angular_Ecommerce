@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../model/Book';
 import { HttpClientService } from '../service/http-client.service';
+
+
 
 @Component({
   selector: 'app-shop-detail',
@@ -17,18 +19,20 @@ export class ShopDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.httpClientService
+      .getBooks()
+      .subscribe((response) => this.handleSuccessfulResponse(response));
+
+    let data = localStorage.getItem('cart');
+
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get('bookId'));
     this.httpClientService
       .getBookById(productIdFromRoute)
-      .subscribe((response) => {
-        const { tutorials } = response;
-        this.handleSuccessfulResponse(tutorials);
-      });
+      .subscribe((response) => this.handleSuccessfulResponse(response));
   }
   handleSuccessfulResponse(response) {
-    console.log('response :>> ', response);
     const bookwithRetrievedImageField = response;
     bookwithRetrievedImageField.id = this.booksRecieved.id;
     bookwithRetrievedImageField.name = this.booksRecieved.name;
@@ -39,4 +43,20 @@ export class ShopDetailComponent implements OnInit {
     bookwithRetrievedImageField.category_id = this.booksRecieved.category_id;
     bookwithRetrievedImageField.picByte = this.booksRecieved.picByte;
   }
+
+  addToCart() {
+    let book = this.booksRecieved
+    
+    let cartData = [];
+
+    let data = localStorage.getItem('cart');
+
+    if (data !== null) {
+      cartData = JSON.parse(data);
+    }
+    cartData.push(this.booksRecieved);
+    localStorage.setItem('cart', JSON.stringify(cartData));
+    book.isAdded = true;
+  }
+  
 }

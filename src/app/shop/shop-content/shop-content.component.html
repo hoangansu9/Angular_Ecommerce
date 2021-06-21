@@ -36,9 +36,16 @@
       </ul>
     </div>
   </div>
-
+  <div class="mt-3">
+    ... Items per Page:
+    <select (change)="handlePageSizeChange($event)">
+      <option *ngFor="let size of pageSizes" [ngValue]="size">
+        {{ size }}
+      </option>
+    </select>
+  </div>
   <div class="product_grid">
-    <div class="product_grid_border"></div>
+    <!-- <div class="product_grid_border"></div> -->
 
     <!-- Product Item -->
     <div
@@ -79,8 +86,8 @@
     </div>
 
     <!-- Product Item discount -->
-    <!-- <div class="product_item discount">
-      <div class="product_border"></div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
       <div
         class="
           product_image
@@ -90,55 +97,500 @@
           justify-content-center
         "
       >
-        <img src="images/featured_1.png" alt="" />
+        <img src="assets/images/nhagiakim.png" alt="" />
       </div>
       <div class="product_content">
-        <div class="product_price">200.000<span>300.000</span></div>
+        <div class="product_price">80.000<span>900.000</span></div>
         <div class="product_name">
           <div>
-            <a href="#" tabindex="0">Vô cùng tàn nhẫn vô càng yêu thương</a>
+            <a href="#" tabindex="0">Nhà Giả Kim</a>
           </div>
         </div>
       </div>
       <div class="product_fav"><i class="fas fa-heart"></i></div>
       <ul class="product_marks">
-        <li class="product_mark product_discount">-25%</li>
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/dacnhantam.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">90.000<span>100.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Đắc Nhân Tâm</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <!-- <div class="product_item discount">
+     
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/toila.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">50.000<span>60.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Tôi Là Bêtô</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
         <li class="product_mark product_new">new</li>
       </ul>
     </div> -->
-
-    <!-- <div class="shop_page_nav d-flex flex-row">
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
       <div
         class="
-          page_prev
+          product_image
           d-flex
           flex-column
           align-items-center
           justify-content-center
         "
       >
-        <i class="fas fa-chevron-left"></i>
+        <img src="assets/images/matbiec.jpg" alt="" />
       </div>
-      <ul class="page_nav d-flex flex-row">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">...</a></li>
-        <li><a href="#">21</a></li>
+      <div class="product_content">
+        <div class="product_price">50.000<span>40.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Mắt biếc</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
       </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
       <div
         class="
-          page_next
+          product_image
           d-flex
           flex-column
           align-items-center
           justify-content-center
         "
       >
-        <i class="fas fa-chevron-right"></i>
+        <img src="assets/images/thangquynho.jpg" alt="" />
       </div>
+      <div class="product_content">
+        <div class="product_price">40.000<span>50.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Thằng Quỷ Nhỏ</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/tatden.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">80.000<span>70.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Tắt Đèn</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/nhagiakim.png" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">80.000<span>900.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Nhà Giả Kim</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/dacnhantam.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">90.000<span>100.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Đắc Nhân Tâm</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <!-- <div class="product_item discount">
+     
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/toila.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">50.000<span>60.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Tôi Là Bêtô</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
     </div> -->
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/matbiec.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">50.000<span>40.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Mắt biếc</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/thangquynho.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">40.000<span>50.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Thằng Quỷ Nhỏ</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/tatden.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">80.000<span>70.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Tắt Đèn</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/nhagiakim.png" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">80.000<span>900.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Nhà Giả Kim</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/dacnhantam.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">90.000<span>100.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Đắc Nhân Tâm</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <!-- <div class="product_item discount">
+     
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/toila.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">50.000<span>60.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Tôi Là Bêtô</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div> -->
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/matbiec.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">50.000<span>40.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Mắt biếc</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/thangquynho.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">40.000<span>50.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Thằng Quỷ Nhỏ</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <div class="product_item discount">
+      <!-- <div class="product_border"></div> -->
+      <div
+        class="
+          product_image
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <img src="assets/images/tatden.jpg" alt="" />
+      </div>
+      <div class="product_content">
+        <div class="product_price">80.000<span>70.000</span></div>
+        <div class="product_name">
+          <div>
+            <a href="#" tabindex="0">Tắt Đèn</a>
+          </div>
+        </div>
+      </div>
+      <div class="product_fav"><i class="fas fa-heart"></i></div>
+      <ul class="product_marks">
+        <li class="product_mark product_discount">-10%</li>
+        <li class="product_mark product_new">new</li>
+      </ul>
+    </div>
+    <!-- 
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      [responsive]="true"
+      (pageChange)="handlePageChange($event)"
+    >
+    </pagination-controls> -->
 
+    <!-- <div class="mt-3">
+      ... Items per Page:
+      <select (change)="handlePageSizeChange($event)">
+        <option *ngFor="let size of pageSizes" [ngValue]="size">
+          {{ size }}
+        </option>
+      </select>
+    </div> -->
+  </div>
+  <div>
     <pagination-controls
       previousLabel="Prev"
       nextLabel="Next"
@@ -146,14 +598,5 @@
       (pageChange)="handlePageChange($event)"
     >
     </pagination-controls>
-
-    <div class="mt-3">
-      ... Items per Page:
-      <select (change)="handlePageSizeChange($event)">
-        <option *ngFor="let size of pageSizes" [ngValue]="size">
-          {{ size }}
-        </option>
-      </select>
-    </div>
   </div>
 </div>

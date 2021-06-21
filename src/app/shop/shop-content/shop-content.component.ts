@@ -12,8 +12,9 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class ShopContentComponent implements OnInit {
   books: Array<Book>;
+  bookss: Array<Book>;
   booksRecieved: Array<Book>;
-
+  booksRecieveds: Array<Book>;
   cartBooks: any;
 
   tutorials: Book[] = [];
@@ -67,7 +68,7 @@ export class ShopContentComponent implements OnInit {
     this.httpClientService.getPagging(this.page, this.size).subscribe(
       (response) => {
         const { tutorials, totalItems } = response;
-        this.tutorials = tutorials;
+        this.handleSuccessfulResponseBook(tutorials);
         this.count = totalItems;
         console.log(response);
       },
@@ -87,6 +88,22 @@ export class ShopContentComponent implements OnInit {
     this.retrieveTutorials();
   }
 
+  handleSuccessfulResponseBook(response) {
+    this.bookss = new Array<Book>();
+    this.booksRecieveds = response;
+    for (const book of this.booksRecieveds) {
+      const bookwithRetrievedImageField = new Book();
+      bookwithRetrievedImageField.id = book.id;
+      bookwithRetrievedImageField.name = book.name;
+
+      bookwithRetrievedImageField.retrievedImage =
+        'data:image/jpeg;base64,' + book.picByte;
+      bookwithRetrievedImageField.author = book.author;
+      bookwithRetrievedImageField.price = book.price;
+      bookwithRetrievedImageField.picByte = book.picByte;
+      this.bookss.push(bookwithRetrievedImageField);
+    }
+  }
   handleSuccessfulResponse(response) {
     this.books = new Array<Book>();
 
@@ -104,7 +121,6 @@ export class ShopContentComponent implements OnInit {
       this.books.push(bookwithRetrievedImageField);
     }
     this.countBooks = this.booksRecieved.length;
-    console.log('this.countBooks :>> ', this.countBooks);
   }
 
   addToCart(bookId) {

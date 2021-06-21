@@ -30,6 +30,7 @@ import { ShopContentComponent } from './shop/shop-content/shop-content.component
 import { ShopSidebarComponent } from './shop/shop-sidebar/shop-sidebar.component';
 import { ShopComponent } from './shop/shop.component';
 import { ViewedComponent } from './viewed/viewed.component';
+import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { ViewedComponent } from './viewed/viewed.component';
     ShopComponent,
     ShopSidebarComponent,
     ShopContentComponent,
+    ShopDetailComponent,
   ],
   imports: [
     BrowserModule,

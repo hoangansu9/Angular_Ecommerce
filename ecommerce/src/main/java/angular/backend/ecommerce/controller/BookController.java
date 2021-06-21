@@ -1,10 +1,7 @@
 package angular.backend.ecommerce.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import angular.backend.ecommerce.db.BookRepository;
 import angular.backend.ecommerce.model.Book;
@@ -28,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.html.Option;
 
 
 @RestController
@@ -73,6 +71,11 @@ public class BookController {
     public List<Book> getBooks() {
         return bookRepository.findAll();
     }
+  @GetMapping("/get/{id}")
+  public Optional<Book> getBookById(@RequestParam Long id) {
+    return bookRepository.findById(id);
+  }
+
 
     @PostMapping("/upload")
     public void uploadImage(@RequestParam("imageFile") MultipartFile file) throws IOException {

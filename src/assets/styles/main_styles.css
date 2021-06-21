@@ -1457,6 +1457,7 @@ select option {
   display: block;
   position: relative;
   max-width: 100%;
+  height: 165px !important;
 }
 .product_content {
   width: 100%;

@@ -22,9 +22,13 @@ export class ShopDetailComponent implements OnInit {
     const productIdFromRoute = Number(routeParams.get('bookId'));
     this.httpClientService
       .getBookById(productIdFromRoute)
-      .subscribe((response) => this.handleSuccessfulResponse(response));
+      .subscribe((response) => {
+        const { tutorials } = response;
+        this.handleSuccessfulResponse(tutorials);
+      });
   }
   handleSuccessfulResponse(response) {
+    console.log('response :>> ', response);
     const bookwithRetrievedImageField = response;
     bookwithRetrievedImageField.id = this.booksRecieved.id;
     bookwithRetrievedImageField.name = this.booksRecieved.name;
@@ -35,5 +39,4 @@ export class ShopDetailComponent implements OnInit {
     bookwithRetrievedImageField.category_id = this.booksRecieved.category_id;
     bookwithRetrievedImageField.picByte = this.booksRecieved.picByte;
   }
-  
 }

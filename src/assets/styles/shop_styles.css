@@ -1237,6 +1237,7 @@ select option {
   -o-transform: translateX(-20px);
   transform: translateX(-20px);
   width: calc(100% + 40px);
+  display: flex;
 }
 .product_grid_border {
   display: block;

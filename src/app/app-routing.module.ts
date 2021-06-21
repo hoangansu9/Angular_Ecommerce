@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BooksComponent } from './admin/books/books.component';
 import { CategoriesComponent } from './admin/categories/categories.component';
 import { UsersComponent } from './admin/users/users.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
 import { ShopComponent } from './shop/shop.component';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'admin/categories', component: CategoriesComponent },
   { path: '', component: ShopComponent },
   { path: 'book/:bookId', component: ShopDetailComponent },
+  { path: 'cart', component: CartPageComponent },
 ];
 
 @NgModule({

@@ -31,6 +31,7 @@ import { ShopSidebarComponent } from './shop/shop-sidebar/shop-sidebar.component
 import { ShopComponent } from './shop/shop.component';
 import { ViewedComponent } from './viewed/viewed.component';
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { ShopDetailComponent } from './shop-detail/shop-detail.component';
     ShopSidebarComponent,
     ShopContentComponent,
     ShopDetailComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,

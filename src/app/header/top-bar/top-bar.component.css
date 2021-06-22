@@ -48,7 +48,7 @@
 }
 
 .login .social .circle {
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
   color: #ffffff;
   border-radius: 100px;
   display: inline-block;
@@ -57,25 +57,36 @@
 }
 .login .social .circle .fa {
   font-size: 16px;
+  position: relative;
+}
+.googlee {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  height: 30px;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
 }
 .login .social .facebook {
-  background-color: #455ca8;
-  color: #ffffff;
+  /* background-color: #455ca8; */
+  /* color: #ffffff; */
+  position: relative;
 }
 .login .social .google {
-  background-color: #f74933;
+  background-color: #ffffff;
 }
 .login .social .github {
-  background-color: #403a3a;
+  background-color: #ffffff;
 }
 .login .facebook:hover {
   background-color: #6e83cd;
 }
 .login .google:hover {
-  background-color: #ff7566;
+  background-color: #4d4d4d;
 }
 .login .github:hover {
-  background-color: #4d4d4d;
+  background-color: #ff7566;
 }
 .login .forgot {
   color: #797979;

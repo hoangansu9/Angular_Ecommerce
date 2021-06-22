@@ -56,7 +56,9 @@
         <img src="{{ book.retrievedImage }}" alt="" />
       </div>
       <div class="product_content">
-        <div class="product_price">{{ book.price }}<span>900.000</span></div>
+        <div class="product_price">
+          {{ book.price | number }}<span>900.000</span>
+        </div>
         <div class="product_name">
           <div>
             <a

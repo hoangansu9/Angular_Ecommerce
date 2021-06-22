@@ -21,86 +21,113 @@
               <span class="itemno">#3498765</span>
             </div>
           </div>
-          <div class="item-block ib-qty">
-            <input type="text" value="3" class="qty" />
-            <span class="price"><span>x</span> ${{ item.price }}</span>
-          </div>
+          <div class="item-block ib-qty"></div>
           <div class="item-block ib-total-price">
-            <span class="tp-price">$75.00</span>
+            <span class="tp-price">${{ item.price | number }}</span>
             <span class="tp-remove"><i class="i-cancel-circle"></i></span>
           </div>
         </div>
         <div class="item-foot cf">
-          <!-- <div class="if-message"><p>Space Reserved for item/promo related messaging</p></div> -->
           <div class="if-left"><span class="if-status">In Stock</span></div>
           <div class="if-right">
-            <!-- <span class="blue-link">Subscription Options</span> | --><span
-              class="blue-link"
-              >Thêm sản phẩm yêu thích</span
-            >
+            <span class="blue-link">Thêm sản phẩm yêu thích</span>
           </div>
         </div>
       </li>
-      <!-- end simple product -->
     </ul>
   </div>
   <div class="sub-table cf">
     <div class="summary-block">
-      <!-- <div class="sb-promo">
-        <input type="text" placeholder="Enter Promo Code" />
-        <span class="btn">Apply</span>
-      </div>         -->
       <ul>
-        <li class="subtotal">
-          <span class="sb-label">Tổng phụ</span
-          ><span class="sb-value">$25.99</span>
-        </li>
-        <li class="shipping">
-          <span class="sb-label">Phí ship</span
-          ><span class="sb-value">n/a</span>
-        </li>
-        <li class="tax">
-          <span class="sb-label"
-            >Thuế|
-            <span class="tax-edit"
-              >Chỉnh sửa <i class="i-notch-down"></i></span></span
-          ><span class="sb-value">$5.00</span>
-        </li>
-        <li class="tax-calculate">
-          <input type="text" value="06484" class="tax" /><span class="btn"
-            >Calculate</span
-          >
-        </li>
         <li class="grand-total">
           <span class="sb-label">Tổng cộng</span
-          ><span class="sb-value">$120.99</span>
+          ><span class="sb-value">${{ total | number }}</span>
         </li>
       </ul>
     </div>
     <div class="sb-promo">
       <input
         type="text"
-        placeholder="Nhập mã giảm giá"
+        placeholder="   Nhập mã giảm giá"
         style="height: 45px; margin-right: 10px"
       />
       <span class="btn">Áp dụng</span>
     </div>
-    <div class="copy-block">
-      <p>
-        Items will be saved in your cart for 30 days. To save items longer, add
-        them to your <a href="#">Sản phẩm yêu thích</a>.
-      </p>
-      <p class="customer-care">
-        Call us M-F 8:00 am to 6:00 pm EST<br />
-        (877)-555-5555 or <a href="#">Liên hệ</a>. <br />
-      </p>
-    </div>
   </div>
-
-  <div class="cart-footer cf">
+  <div (click)="openWindowLogin(content)" class="cart-footer cf">
     <span class="btn">Checkout</span>
     <span class="cont-shopping"
       ><i class="i-angle-left"></i>Tiếp tục mua sắm</span
     >
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-content">
+    <div class="modal-body">
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        (click)="modal.close('Close click')"
+      >
+        &times;
+      </button>
+      <br />
+      <div class="form">
+        <form
+          method=""
+          html="{:multipart=>true}"
+          data-remote="true"
+          action=""
+          accept-charset="UTF-8"
+        >
+          <input
+            id="name"
+            class="form-control"
+            type="text"
+            placeholder="Tên"
+            name="name"
+          />
+          <br />
+          <input
+            id="adderss"
+            class="form-control"
+            type="text"
+            placeholder="Địa chỉ"
+            name="adderss"
+          />
+          <br />
+          <input
+            id="phone"
+            class="form-control"
+            type="text"
+            placeholder="Số điện thoại"
+            name="phone"
+          /><br />
+          <input
+            (click)="modal.close('Close click')"
+            (click)="showSuccess()"
+            class="btn btn-default btn-register"
+            type="button"
+            value="OK"
+            name="commit"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ngb-toast
+  *ngFor="let toast of toastService.toasts"
+  [class]="toast.classname"
+  [autohide]="true"
+  [delay]="toast.delay || 5000"
+  (hidden)="toastService.remove(toast)"
+>
+  <ng-template [ngIf]="isTemplate(toast)" [ngIfElse]="text">
+    <ng-template [ngTemplateOutlet]="toast.textOrTpl"></ng-template>
+  </ng-template>
+
+  <ng-template #text>{{ toast.textOrTpl }}</ng-template>
+</ngb-toast>

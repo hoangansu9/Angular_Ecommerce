@@ -21,7 +21,6 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: "Lato", "helvetica", arial, sans-serif !important;
   font-size: 100%;
   font-weight: 400;
   color: #424242;
@@ -143,6 +142,7 @@ strong {
   font-size: 0.8em;
 }
 .item .item-block.ib-qty {
+  height: 20px;
   width: 20%;
   text-align: right;
 }
@@ -456,4 +456,10 @@ strong {
   .item .item-block.ib-info img.product-img {
     width: 70px;
   }
+}
+.toast {
+  position: fixed !important;
+  top: 30px !important;
+  right: 10px !important;
+  z-index: 10 !important;
 }

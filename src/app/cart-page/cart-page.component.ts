@@ -17,7 +17,5 @@ export class CartPageComponent implements OnInit {
     } else {
       this.cartBooks = [];
     }
-
-    console.log('this.cartBooks :>> ', this.cartBooks);
   }
 }

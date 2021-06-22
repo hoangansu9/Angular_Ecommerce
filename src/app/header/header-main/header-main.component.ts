@@ -9,7 +9,7 @@ import { HttpClientService } from 'src/app/service/http-client.service';
   styleUrls: ['./header-main.component.css'],
 })
 export class HeaderMainComponent implements OnInit {
-  public isCollapsed = false;
+  public isCollapsed = true;
   faShoppingCart = faShoppingCart;
   constructor(
     private router: Router,

@@ -10,29 +10,28 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "book")
-public class Book {
+@Table(name = "orderItem")
+public class OrderItem {
 
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "name")
-  private String name;
+  @Column(name = "bookName")
+  private String bookName;
 
-  @Column(name = "author")
-  private String author;
 
   @Column(name = "price")
   private String price;
 
-  @Lob
-  @Basic(fetch = FetchType.LAZY)
-  @Column(name = "picByte", length = 100000)
-  private byte[] picByte;
+  @Column(name = "quantity")
+  private int quantity;
 
-  @Column(name = "category_id")
-  private Long category_id;
+  @ManyToOne
+  Book book;
 
+  @ManyToOne
+  @JoinColumn(name = "order_id")
+  private OrderBook orderBook;
 }

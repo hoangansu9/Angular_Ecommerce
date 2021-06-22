@@ -12,21 +12,18 @@
   <div class="cart-table">
     <ul>
       <!-- begin simple product -->
-      <li class="item">
+      <li class="item" *ngFor="let item of cartBooks">
         <div class="item-main cf">
           <div class="item-block ib-info cf">
-            <img
-              class="product-img"
-              src="http://fakeimg.pl/150/e5e5e5/adadad/?text=IMG"
-            />
+            <img class="product-img" src="{{ item.retrievedImage }}" />
             <div class="ib-info-meta">
-              <span class="title">Drink Up Nalgene Water Bottle</span>
+              <span class="title">{{ item.name }}</span>
               <span class="itemno">#3498765</span>
             </div>
           </div>
           <div class="item-block ib-qty">
             <input type="text" value="3" class="qty" />
-            <span class="price"><span>x</span> $25.00</span>
+            <span class="price"><span>x</span> ${{ item.price }}</span>
           </div>
           <div class="item-block ib-total-price">
             <span class="tp-price">$75.00</span>
@@ -45,109 +42,6 @@
         </div>
       </li>
       <!-- end simple product -->
-
-      <!-- begin variation product w/ option -->
-      <li class="item">
-        <div class="item-main cf">
-          <div class="item-block ib-info cf">
-            <img
-              class="product-img"
-              src="http://fakeimg.pl/150/e5e5e5/adadad/?text=IMG"
-            />
-            <div class="ib-info-meta">
-              <span class="title">Drink Up Nalgene Water Bottle</span>
-              <span class="itemno">#3498765</span>
-              <span class="styles">
-                <span><strong>Color</strong>: Neon Green</span>
-                <span><strong>Size</strong>: 32oz</span>
-                <span><strong>Warranty</strong>: 3 Years</span>
-                <span class="blue-link">Edit Details</span>
-              </span>
-            </div>
-          </div>
-          <div class="item-block ib-qty">
-            <input type="text" value="3" class="qty" />
-            <span class="price"><span>x</span> $25.00</span>
-          </div>
-          <div class="item-block ib-total-price">
-            <span class="tp-price">$75.00</span>
-            <span class="tp-remove"><i class="i-cancel-circle"></i></span>
-          </div>
-        </div>
-        <div class="item-foot cf">
-          <div class="if-message">
-            <p>Item/promo related messaging shows up here</p>
-          </div>
-          <div class="if-left"><span class="if-status">In Stock</span></div>
-          <div class="if-right">
-            <span class="blue-link">Gift Options</span> |
-            <span class="blue-link">Add to Registry</span> |
-            <span class="blue-link">Add to Wishlist</span>
-          </div>
-        </div>
-      </li>
-      <!-- end variation product w/ option -->
-
-      <!-- begin bundle product -->
-      <li class="item">
-        <div class="item-main cf">
-          <div class="item-block ib-info cf">
-            <img
-              class="product-img"
-              src="http://fakeimg.pl/150/e5e5e5/adadad/?text=IMG"
-            />
-            <div class="ib-info-meta">
-              <span class="title">Drink Up Nalgene Water Bottle</span>
-              <span class="itemno">#3498765</span>
-              <span class="styles">
-                <span><strong>Color</strong>: Neon Green</span>
-                <span><strong>Size</strong>: 32oz</span>
-                <span><strong>Warranty</strong>: 3 Years</span>
-                <span class="blue-link">Edit Details</span>
-              </span>
-            </div>
-          </div>
-          <div class="item-block ib-qty">
-            <input type="text" value="3" class="qty" />
-            <span class="price"><span>x</span> $25.00</span>
-          </div>
-          <div class="item-block ib-total-price">
-            <span class="tp-price">$75.00</span>
-            <span class="tp-remove"><i class="i-cancel-circle"></i></span>
-          </div>
-        </div>
-        <div class="bundle-block">
-          <ul>
-            <li class="cf">
-              <i class="i-down-right-arrow"></i>
-              <img
-                class="bundle-img"
-                src="http://fakeimg.pl/100/e5e5e5/adadad/?text=IMG"
-              />
-              <span class="bundle-title">Nalgene Orange Cap</span>
-              <span class="bundle-itemno">#9872656</span>
-            </li>
-            <li class="cf">
-              <i class="i-down-right-arrow"></i>
-              <img
-                class="bundle-img"
-                src="http://fakeimg.pl/100/e5e5e5/adadad/?text=IMG"
-              />
-              <span class="bundle-title">Nalgene Orange Cap</span>
-              <span class="bundle-itemno">#9872656</span>
-            </li>
-          </ul>
-        </div>
-        <div class="item-foot cf">
-          <div class="if-left"><span class="if-status">In Stock</span></div>
-          <div class="if-right">
-            <span class="blue-link">Gift Options</span> |
-            <span class="blue-link">Add to Registry</span> |
-            <span class="blue-link">Add to Wishlist</span>
-          </div>
-        </div>
-      </li>
-      <!-- end bundle product -->
     </ul>
   </div>
   <div class="sub-table cf">

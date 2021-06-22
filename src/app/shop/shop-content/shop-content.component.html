@@ -40,7 +40,7 @@
   <div class="product_grid">
     <!-- <div class="product_grid_border"></div> -->
 
-    <!-- Product Item -->
+    <!-- Product Item
     <div class="product_item is_new" *ngFor="let book of bookss; let i = index">
       <div
         class="
@@ -77,11 +77,10 @@
           new
         </li>
       </ul>
-    </div>
+    </div> -->
 
     <!-- Product Item discount -->
-    <div class="product_item discount">
-      <!-- <div class="product_border"></div> -->
+    <div class="product_item new" *ngFor="let book of bookss; let i = index">
       <div
         class="
           product_image
@@ -91,44 +90,28 @@
           justify-content-center
         "
       >
-        <img src="assets/images/nhagiakim.png" alt="" />
+        <img src="{{ book.retrievedImage }}" alt="" />
       </div>
       <div class="product_content">
-        <div class="product_price">80.000<span>900.000</span></div>
+        <div class="product_price">{{ book.price }}<span>900.000</span></div>
         <div class="product_name">
           <div>
-            <a href="#" tabindex="0">Nhà Giả Kim</a>
+            <a
+              [title]="book.name + ' details'"
+              [routerLink]="['/book', book.id]"
+              tabindex="0"
+              >{{ book.name }}</a
+            >
           </div>
         </div>
       </div>
-      <div class="product_fav"><i class="fas fa-heart"></i></div>
-      <ul class="product_marks">
-        <li class="product_mark product_discount">-10%</li>
-        <li class="product_mark product_new">new</li>
-      </ul>
-    </div>
-    <div class="product_item discount">
-      <!-- <div class="product_border"></div> -->
       <div
-        class="
-          product_image
-          d-flex
-          flex-column
-          align-items-center
-          justify-content-center
-        "
+        (click)="addToCart(book.id)"
+        (click)="refreshPage()"
+        class="product_fav"
       >
-        <img src="assets/images/dacnhantam.jpg" alt="" />
+        <i class="fas fa-cart-plus"></i>
       </div>
-      <div class="product_content">
-        <div class="product_price">90.000<span>100.000</span></div>
-        <div class="product_name">
-          <div>
-            <a href="#" tabindex="0">Đắc Nhân Tâm</a>
-          </div>
-        </div>
-      </div>
-      <div class="product_fav"><i class="fas fa-heart"></i></div>
       <ul class="product_marks">
         <li class="product_mark product_discount">-10%</li>
         <li class="product_mark product_new">new</li>

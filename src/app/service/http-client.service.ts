@@ -30,11 +30,9 @@ export class HttpClientService {
     return this.httpClient.get<Book[]>('http://localhost:8080/books/get');
   }
   getBookById(id): Observable<any> {
-    return this.httpClient.get<any>(
-      `http://localhost:8080/books/get?id=${id}`
-    );
+    return this.httpClient.get<any>(`http://localhost:8080/books/get?id=${id}`);
   }
-  getPagging(page,size): Observable<any> {
+  getPagging(page, size): Observable<any> {
     return this.httpClient.get<any>(
       `http://localhost:8080/books/paging?page=${page}&size=${size}`
     );
@@ -60,7 +58,11 @@ export class HttpClientService {
       'http://localhost:8080/categories/get'
     );
   }
-
+  getCategoryById(id) {
+    return this.httpClient.get<Category>(
+      'http://localhost:8080/categories/get/' + id
+    );
+  }
   addCategory(newCategory: Category) {
     return this.httpClient.post<Category>(
       'http://localhost:8080/categories/add',

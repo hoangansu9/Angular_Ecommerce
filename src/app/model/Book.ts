@@ -7,4 +7,5 @@ export class Book {
   retrievedImage: string;
   category_id: number;
   isAdded: boolean;
+  cateName: String;
 }

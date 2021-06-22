@@ -1,4 +1,4 @@
-.like btn btn-default{
+.btn btn-light btn-md mr-1 mb-2{
     background: #ff9f1a;
     padding: 1.2em 1.5em;
     border: none;
@@ -10,3 +10,20 @@
      .like:hover {
       background: #4827be;
       color: #fff; }
+
+.view overlay rounded z-depth-1 main-img {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.col-md-6 {
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  margin-bottom: 15px; 
+  margin-top: 0; }
+
+.mr-1 {
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  margin-bottom: 15px; }

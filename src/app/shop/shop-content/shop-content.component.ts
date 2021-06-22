@@ -65,7 +65,7 @@ export class ShopContentComponent implements OnInit {
     return params;
   }
   retrieveTutorials(): void {
-    this.httpClientService.getPagging(this.page, this.size).subscribe(
+    this.httpClientService.getPagging(this.page - 1, this.size).subscribe(
       (response) => {
         const { tutorials, totalItems } = response;
         this.handleSuccessfulResponseBook(tutorials);
@@ -95,7 +95,6 @@ export class ShopContentComponent implements OnInit {
       const bookwithRetrievedImageField = new Book();
       bookwithRetrievedImageField.id = book.id;
       bookwithRetrievedImageField.name = book.name;
-
       bookwithRetrievedImageField.retrievedImage =
         'data:image/jpeg;base64,' + book.picByte;
       bookwithRetrievedImageField.author = book.author;

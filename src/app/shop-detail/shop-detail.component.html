@@ -1,44 +1,45 @@
-<div>
 <main class="container">
- 
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
     <img src="{{ booksRecieved.retrievedImage }}" height="362" width="auto" />
   </div>
- 
- 
+
   <!-- Right Column -->
   <div class="right-column">
- 
     <!-- Product Description -->
     <div class="product-description">
-      <h1> {{ booksRecieved.name }} </h1>
+      <h1>{{ booksRecieved.name }}</h1>
     </div>
- 
+
     <!-- Product Configuration -->
     <div class="product-configuration">
- 
       <!-- Product Color -->
       <div class="product-color">
         <span>Tên tác giả : {{ booksRecieved.author }}</span>
- 
       </div>
- 
+
       <!-- Cable Configuration -->
       <div class="cable-config">
         <span>Danh mục : {{ booksRecieved.cateName }} </span>
       </div>
     </div>
- 
+
     <!-- Product Pricing -->
     <div class="product-price">
       <span>Giá : {{ booksRecieved.price }}đ </span>
     </div>
     <div>
-      <button type="button" class="btn btn-light btn-md mr-1 mb-2" (click)="addToCart()" (click)="refreshPage()"> Add to cart </button>
-    <button class="btn btn-light btn-md mr-1 mb-2" type="button">
-      <span class="fa fa-heart"></span>
-    </button>
+      <button
+        type="button"
+        class="btn btn-light btn-md mr-1 mb-2"
+        (click)="addToCart()"
+        (click)="refreshPage()"
+      >
+        Add to cart
+      </button>
+      <button class="btn btn-light btn-md mr-1 mb-2" type="button">
+        <span class="fa fa-heart"></span>
+      </button>
     </div>
   </div>
 </main>

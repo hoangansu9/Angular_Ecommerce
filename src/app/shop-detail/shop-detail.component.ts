@@ -19,9 +19,6 @@ export class ShopDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.httpClientService
-      .getBooks()
-      .subscribe((response) => this.handleSuccessfulResponse(response));
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get('bookId'));
     this.httpClientService
@@ -29,11 +26,12 @@ export class ShopDetailComponent implements OnInit {
       .subscribe((response) => this.handleSuccessfulResponse(response));
   }
   handleSuccessfulResponse(response) {
-    const bookwithRetrievedImageField = response[0];
+    const bookwithRetrievedImageField = response;
     bookwithRetrievedImageField.retrievedImage =
       'data:image/jpeg;base64,' + bookwithRetrievedImageField.picByte;
-    this.booksRecieved = bookwithRetrievedImageField;
     this.getCateName(bookwithRetrievedImageField.category_id);
+    this.booksRecieved = bookwithRetrievedImageField;
+    console.log('this.booksRecieved :>> ', this.booksRecieved);
   }
 
   getCateName(id) {

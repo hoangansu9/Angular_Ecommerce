@@ -30,7 +30,7 @@ export class HttpClientService {
     return this.httpClient.get<Book[]>('http://localhost:8080/books/get');
   }
   getBookById(id): Observable<any> {
-    return this.httpClient.get<any>(`http://localhost:8080/books/get?id=${id}`);
+    return this.httpClient.get<Book>('http://localhost:8080/books/get/'+id);
   }
   getPagging(page, size): Observable<any> {
     return this.httpClient.get<any>(

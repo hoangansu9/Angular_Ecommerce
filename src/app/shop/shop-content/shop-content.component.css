@@ -1,3 +1,9 @@
-.image_product {
-  height: 115px;
+.image_product img {
+  height: 140px;
+}
+.product_price {
+  margin-top: 35px;
+}
+.product_grid {
+  height: auto !important;
 }

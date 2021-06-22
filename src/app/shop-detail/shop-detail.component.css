@@ -1,29 +1,75 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+.left-column {
+  width: auto;
+  position: relative;
+}
+ 
+.right-column {
+  width: auto;
+  margin-top: 60px;
+}
+
+.product-description {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 12px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+.product-price {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+ 
+.product-price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #F39801;
+  margin-right: 20px;
+  font-weight: bold;
+}
+ 
 .btn btn-light btn-md mr-1 mb-2{
-    background: #ff9f1a;
-    padding: 1.2em 1.5em;
-    border: none;
-    text-transform: UPPERCASE;
-    font-weight: bold;
-    color: #fff;
-    -webkit-transition: background .3s ease;
-            transition: background .3s ease; }
-     .like:hover {
-      background: #4827be;
-      color: #fff; }
-
-.view overlay rounded z-depth-1 main-img {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1; }
-
-.col-md-6 {
+  background: #ff9f1a;
+  padding: 1.2em 1.5em;
+  border: none;
   text-transform: UPPERCASE;
   font-weight: bold;
-  margin-bottom: 15px; 
-  margin-top: 0; }
+  color: #fff;
+  -webkit-transition: background .3s ease;
+          transition: background .3s ease; 
+        }
 
-.mr-1 {
-  text-transform: UPPERCASE;
-  font-weight: bold;
-  margin-bottom: 15px; }
+.full-width {
+  max-width: 986px;
+  margin: 0 auto;
+}
